@@ -28,6 +28,6 @@ export default GoogleApiWrapper({
 })(MapContainer);
 
 ReactDOM.render(
-  <Game />,
+  <MapContainer />,
   document.getElementById('root')
 );
