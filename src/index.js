@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 
 const mapStyles = {
@@ -25,3 +26,8 @@ export class MapContainer extends Component {
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyDYXogTmMXbKU1OvVff0wo8wzAk83o7Fc0'
 })(MapContainer);
+
+ReactDOM.render(
+  <Game />,
+  document.getElementById('root')
+);
