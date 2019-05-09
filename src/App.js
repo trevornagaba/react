@@ -46,6 +46,9 @@ export class MapContainer extends Component {
               onMouseover={this.onMouseoverMarker}
               onMouseout={this.onClose}
               name={'My marker'}
+              icon={{
+                url: './public/static/icon.svg'
+              }}
           />
           <InfoWindow
               marker={this.state.activeMarker}
