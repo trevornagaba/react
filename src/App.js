@@ -5,7 +5,7 @@ const mapStyles = {
   width: '75%',
   height: '90%',
   display: flex,
-  align-items: center;
+  aligntems: center
 };
 
 export class MapContainer extends Component {
