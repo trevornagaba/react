@@ -15,7 +15,7 @@ export class MapContainer extends Component {
     selectedPlace: {}
   };
 
-  onMarkerlick = (props, marker, e) => {
+  onMarkerClick = (props, marker, e) => {
     this.setState({
       markerClicked: true
     })
