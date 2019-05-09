@@ -4,8 +4,8 @@ import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 const mapStyles = {
   width: '75%',
   height: '90%',
-  align: 'right',
-  position: 'absolute'
+  display: flex;
+  align-items: center;
 };
 
 export class MapContainer extends Component {
