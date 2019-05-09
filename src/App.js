@@ -14,14 +14,14 @@ export class MapContainer extends Component {
     selectedPlace: {} 
   };
 
-  onMarkerClick = (props, marker, e) =>
+  onMouseoverMarker = (props, marker, e) =>
   this.setState({
     selectedPlace: props,
     activeMarker: marker,
     showingInfoWindow: true
   });
 
-  onClose = props => {
+  onMouseout = props => {
     if (this.state.showingInfoWindow) {
         this.setState({
         showingInfoWindow: false,
@@ -43,7 +43,8 @@ export class MapContainer extends Component {
           }}
         >
           <Marker
-              onClick={this.onMarkerClick}
+              onMouseover={this.onMouseoverMarker}
+              onMouseout={this.onClose}
               name={'My marker'}
           />
           <InfoWindow
