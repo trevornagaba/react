@@ -56,7 +56,7 @@ export class MapContainer extends Component {
 
   render() {
     return (
-      <div style = {mapStyles}>
+      <div style = 'align:right'>
         <Map
           google={this.props.google}
           zoom={14}
