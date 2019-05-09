@@ -15,26 +15,28 @@ export class MapContainer extends Component {
     selectedPlace: {}
   };
 
-  onCMarkerlick = (props, marker, e) =>
+  onMarkerlick = (props, marker, e) => {
     this.setState({
       markerClicked: true
-  });
+    })
+  };
 
-  onMouseoverMarker = (props, marker, e) =>
-  if (!this.state.showingInfoWindow) {
-    this.setState({
-        selectedPlace: props,
-        activeMarker: marker,
-        showingInfoWindow: true
+  onMouseoverMarker = (props, marker, e) => {
+    if (!this.state.showingInfoWindow) {
+      this.setState({
+          selectedPlace: props,
+          activeMarker: marker,
+          showingInfoWindow: true
+      })
     }
-  });
+  };
 
   onMouseoutMarker = props => {
     if (!this.state.markerClicked) {
       if (this.state.showingInfoWindow) {
           this.setState({
-          showingInfoWindow: false,
-          activeMarker: null
+            showingInfoWindow: false,
+            activeMarker: null
           });
       }
     }
