@@ -9,10 +9,16 @@ const mapStyles = {
 
 export class MapContainer extends Component {
   state = {
+    markerClicked: false,
     showingInfoWindow: false,  //Hides or the shows the infoWindow
     activeMarker: {},          //Shows the active marker upon click
-    selectedPlace: {} 
+    selectedPlace: {}
   };
+
+  onCMarkerlick = (props, marker, e) =>
+  this.setState({
+    markerClicked: true
+  });
 
   onMouseoverMarker = (props, marker, e) =>
   this.setState({
@@ -21,6 +27,17 @@ export class MapContainer extends Component {
     showingInfoWindow: true
   });
 
+  onMouseoutMarker = props => {
+    if (!this.state.markerClicked) {
+      if (this.state.showingInfoWindow) {
+          this.setState({
+          showingInfoWindow: false,
+          activeMarker: null
+          });
+      }
+    }
+  }
+  
   onClose = props => {
     if (this.state.showingInfoWindow) {
         this.setState({
@@ -44,7 +61,8 @@ export class MapContainer extends Component {
         >
           <Marker
               onMouseover={this.onMouseoverMarker}
-              onMouseout={this.onClose}
+              onClick={this.onMarkerClick}
+              onMouseout={this.onMouseoutMarker}
               name={'My marker'}
               icon={{
                 url: './public/static/icon.svg'
