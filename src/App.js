@@ -41,21 +41,21 @@ export class MapContainer extends Component {
             lat: 0.135502,
             lng: 32.721040
           }}
-        />
-        <Marker
-            onClick={this.onMarkerClick}
-            name={'My marker'}
-        />
-        <InfoWindow
-            marker={this.state.activeMarker}
-            visible={this.state.showingInfoWindow}
-            onClose={this.onClose}
         >
-            <div>
-            <h4>{this.state.selectedPlace.name}</h4>
-            </div>
-        </InfoWindow>
-      </Map>
+          <Marker
+              onClick={this.onMarkerClick}
+              name={'My marker'}
+          />
+          <InfoWindow
+              marker={this.state.activeMarker}
+              visible={this.state.showingInfoWindow}
+              onClose={this.onClose}
+          >
+              <div>
+              <h4>{this.state.selectedPlace.name}</h4>
+              </div>
+          </InfoWindow>
+        </Map>
     );
   }
 }
