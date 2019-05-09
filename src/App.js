@@ -4,7 +4,7 @@ import { Map, GoogleApiWrapper } from 'google-maps-react';
 const mapStyles = {
   width: '75%',
   height: '90%',
-  aligh: 'center'
+  aligh: 'right'
 };
 
 export class MapContainer extends Component {
