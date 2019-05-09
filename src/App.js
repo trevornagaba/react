@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
 const mapStyles = {
-  width: '75%',
-  height: '90%',
-  display: 'flex',
-  alignItems: 'right'
+  width: '100%',
+  height: '100%',
+  // display: 'flex',
+  // alignItems: 'right'
 };
 
 export class MapContainer extends Component {
@@ -56,36 +56,35 @@ export class MapContainer extends Component {
 
   render() {
     return (
-      <div style = 'align:right'>
-        <Map
-          google={this.props.google}
-          zoom={14}
-          style={mapStyles}
-          initialCenter={{
-            lat: 0.135502,
-            lng: 32.721040
-          }}
-        >
-          <Marker
-              onMouseover={this.onMouseoverMarker}
-              onClick={this.onMarkerClick}
-              onMouseout={this.onMouseoutMarker}
-              name={'My marker'}
-              // icon={{
-              //   url: './public/static/icon.svg'
-              // }}
-          />
-          <InfoWindow
-              marker={this.state.activeMarker}
-              visible={this.state.showingInfoWindow}
-              onClose={this.onClose}
+          <div></div>
+          <Map
+            google={this.props.google}
+            zoom={14}
+            style={mapStyles}
+            initialCenter={{
+              lat: 0.135502,
+              lng: 32.721040
+            }}
           >
-              <div>
-              <h4>{this.state.selectedPlace.name}</h4>
-              </div>
-          </InfoWindow>
-        </Map>
-      </div>
+            <Marker
+                onMouseover={this.onMouseoverMarker}
+                onClick={this.onMarkerClick}
+                onMouseout={this.onMouseoutMarker}
+                name={'My marker'}
+                // icon={{
+                //   url: './public/static/icon.svg'
+                // }}
+            />
+            <InfoWindow
+                marker={this.state.activeMarker}
+                visible={this.state.showingInfoWindow}
+                onClose={this.onClose}
+            >
+                <div>
+                <h4>{this.state.selectedPlace.name}</h4>
+                </div>
+            </InfoWindow>
+          </Map>
     );
   }
 }
