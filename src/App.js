@@ -45,6 +45,7 @@ export class MapContainer extends Component {
   onClose = props => {
     if (this.state.showingInfoWindow) {
         this.setState({
+        markerClicked: false,
         showingInfoWindow: false,
         activeMarker: null
         });
