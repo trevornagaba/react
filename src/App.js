@@ -16,15 +16,17 @@ export class MapContainer extends Component {
   };
 
   onCMarkerlick = (props, marker, e) =>
-  this.setState({
-    markerClicked: true
+    this.setState({
+      markerClicked: true
   });
 
   onMouseoverMarker = (props, marker, e) =>
-  this.setState({
-    selectedPlace: props,
-    activeMarker: marker,
-    showingInfoWindow: true
+  if (!this.state.showingInfoWindow) {
+    this.setState({
+        selectedPlace: props,
+        activeMarker: marker,
+        showingInfoWindow: true
+    }
   });
 
   onMouseoutMarker = props => {
@@ -64,9 +66,9 @@ export class MapContainer extends Component {
               onClick={this.onMarkerClick}
               onMouseout={this.onMouseoutMarker}
               name={'My marker'}
-              icon={{
-                url: './public/static/icon.svg'
-              }}
+              // icon={{
+              //   url: './public/static/icon.svg'
+              // }}
           />
           <InfoWindow
               marker={this.state.activeMarker}
