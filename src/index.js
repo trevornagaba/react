@@ -10,17 +10,19 @@ export class MapContainer extends Component {
   render() {
     return (
       <div>
-        <h1>Hello world</h1>
+        <div>
+          <h1>Hello world</h1>
+        </div>
+        <Map
+          google={this.props.google}
+          zoom={14}
+          style={mapStyles}
+          initialCenter={{
+            lat: -1.2884,
+            lng: 36.8233
+          }}
+        />
       </div>
-      <Map
-        google={this.props.google}
-        zoom={14}
-        style={mapStyles}
-        initialCenter={{
-         lat: -1.2884,
-         lng: 36.8233
-        }}
-      />
     );
   }
 }
