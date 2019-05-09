@@ -9,6 +9,9 @@ const mapStyles = {
 export class MapContainer extends Component {
   render() {
     return (
+      <div>
+        <h1>Hello world</h1>
+      </div>
       <Map
         google={this.props.google}
         zoom={14}
