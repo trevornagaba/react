@@ -56,35 +56,34 @@ export class MapContainer extends Component {
 
   render() {
     return (
-          <div></div>
-          <Map
-            google={this.props.google}
-            zoom={14}
-            style={mapStyles}
-            initialCenter={{
-              lat: 0.135502,
-              lng: 32.721040
-            }}
-          >
-            <Marker
-                onMouseover={this.onMouseoverMarker}
-                onClick={this.onMarkerClick}
-                onMouseout={this.onMouseoutMarker}
-                name={'My marker'}
-                // icon={{
-                //   url: './public/static/icon.svg'
-                // }}
-            />
-            <InfoWindow
-                marker={this.state.activeMarker}
-                visible={this.state.showingInfoWindow}
-                onClose={this.onClose}
-            >
-                <div>
-                <h4>{this.state.selectedPlace.name}</h4>
-                </div>
-            </InfoWindow>
-          </Map>
+      <Map
+        google={this.props.google}
+        zoom={14}
+        style={mapStyles}
+        initialCenter={{
+          lat: 0.135502,
+          lng: 32.721040
+        }}
+      >
+        <Marker
+            onMouseover={this.onMouseoverMarker}
+            onClick={this.onMarkerClick}
+            onMouseout={this.onMouseoutMarker}
+            name={'My marker'}
+            // icon={{
+            //   url: './public/static/icon.svg'
+            // }}
+        />
+        <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInfoWindow}
+            onClose={this.onClose}
+        >
+            <div>
+            <h4>{this.state.selectedPlace.name}</h4>
+            </div>
+        </InfoWindow>
+      </Map>
     );
   }
 }
