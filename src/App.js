@@ -87,12 +87,14 @@ export class MapContainer extends Component {
         ]
         for (var n = 0; n < driver_list.length; n++) {
             this.renderAmbulance(driver_list[n])
+            console.log("successful 3")
         }
     }
 
     renderAmbulance(driver) {
         let location = driver['location'].split(",")
         let phone_number = driver['phone_number']
+        console.log("successful 4")
         return (
             <div>
                 <Marker
@@ -113,6 +115,7 @@ export class MapContainer extends Component {
                     <div>
                         <h4>{this.state.selectedPlace.name}</h4>
                     </div>
+                    console.log("successful 5")
                 </InfoWindow>
             </div>
         )
@@ -120,6 +123,7 @@ export class MapContainer extends Component {
 
     componentDidMount() {
         this.getDrivers()
+        console.log("successful 2")
     }
 
     render() {
@@ -133,9 +137,10 @@ export class MapContainer extends Component {
                     lng: 32.721040
                 }}
             >
-                <div>
-                    {this.getDrivers()}
-                </div>
+                // <div>
+                //     {this.getDrivers()}
+                // </div>
+                console.log("successful 1")
             </Map>
         );
     }
