@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://trevornagaba.github.io/react",
   "dependencies": {
+    "axios": "^0.18.0",
     "gh-pages": "^2.0.1",
     "google-maps-react": "^2.0.2",
     "react": "^16.8.4",
