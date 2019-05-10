@@ -119,7 +119,7 @@ export class MapContainer extends Component {
     }
 
     componentDidMount() {
-
+        this.getDrivers()
     }
 
     render() {
