@@ -54,24 +54,40 @@ export class MapContainer extends Component {
         }
     };
 
-    getDrivers() {
-        // Returns all available drivers
-        axios.get('https://68.183.98.140/api/display_drivers')
-            .then(function (response) {
-                // handle success
-                let driver_list = []
-                driver_list = response.data['drivers']
-                for (var n = 0; n < driver_list.length; n++) {
-                    this.renderAmbulance(driver_list[n])
-                }
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            })
-            .then(function () {
-                // always executed
-            });
+    getDrivers = () => {
+         // // Uncomment after sorting our cors and err certificate is invalid
+            // // Also update the call with the map.html for Kampala map
+            // // Returns all available drivers
+            // axios.get('https://68.183.98.140/api/display_drivers')
+            //     .then(function (response) {
+            //         // handle success
+            //         let driver_list = []
+            //         driver_list = response.data['drivers']
+            //         for (var n = 0; n < driver_list.length; n++) {
+            //             this.renderAmbulance(driver_list[n])
+            //         }
+            //     })
+            //     .catch(function (error) {
+            //         // handle error
+            //         console.log(error);
+            //     })
+            //     .then(function () {
+            //         // always executed
+            //     });
+
+        let driver_list = [
+                {"id": 3, "ambulance_owner": "KCCA", "ambulance_tier": "basic", "licence_plate": "UAZ 356D", "status": "ontrip",
+                "location": "0.299372, 32.568841", "phone_number": "0783425174"},
+                {"id": 5, "ambulance_owner": "KCCA", "ambulance_tier": "advanced", "licence_plate": "UG 5342T", "status": "ontrip",
+                "location": "0.3743234,32.6332207", "phone_number": "0782081501"},
+                {"id": 4, "ambulance_owner": "KCCA", "ambulance_tier": "basic", "licence_plate": "UAD 654R", "status": "available",
+                "location": "0.3202003,32.5777486", "phone_number": "0779177955"},
+                {"id": 7, "ambulance_owner": "KCCA", "ambulance_tier": "basic", "licence_plate": "UAS 674E", "status": "available",
+                "location": "0.2811616,32.6137769", "phone_number": "0776534231"}
+        ]
+        for (var n = 0; n < driver_list.length; n++) {
+            this.renderAmbulance(driver_list[n])
+        }
     }
 
     renderAmbulance(driver) {
@@ -106,12 +122,11 @@ export class MapContainer extends Component {
 
     }
 
-
     render() {
         return (
             <Map
                 google={this.props.google}
-                zoom={12}
+                zoom={10}
                 style={mapStyles}
                 initialCenter={{
                     lat: 0.135502,
