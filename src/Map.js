@@ -115,8 +115,6 @@ export class DriverLocation extends React.Component {
     );
   }
 
-[...]
-
 }
 export default DriverLocation;
 
